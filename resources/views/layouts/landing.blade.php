@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 
-    <title>Clasifico - HTML 5 Template Preview</title>
+    <title>Popularity Prediction</title>
 
     <!-- Fav Icon -->
     <link rel="icon" href="{{ asset('landing/images/favicon.ico') }}" type="image/x-icon">
@@ -57,19 +57,13 @@
                             <i class="icon-bar"></i>
                             <i class="icon-bar"></i>
                         </div>
-                        <nav class="main-menu navbar-expand-md navbar-light">
-                            <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
-                                <ul class="navigation clearfix">
-                                    <li class=""><a href="index.html">Home</a>
-                                    </li>
-                                    <li class=""><a href="index.html">Dashboard</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </nav>
                     </div>
                     <div class="btn-box">
-                        <a href="browse-ads-details.html" class="theme-btn-one"><i class="icon-1"></i>Submit Ads</a>
+                        @if(auth()->id() > 0)
+                            <a href="/admin" class="theme-btn-one"><i class="icon-1"></i>Dashboard</a>
+                        @else
+                            <a href="/login" class="theme-btn-one"><i class="icon-1"></i>Login</a>
+                        @endif
                     </div>
                 </div>
             </div>

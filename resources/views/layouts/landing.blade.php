@@ -169,6 +169,7 @@
 
 <!-- main-js -->
 <script src="{{ asset('landing/js/script.js') }}"></script>
+@yield('scripts')
 
 </body><!-- End of .page_wrapper -->
 </html>

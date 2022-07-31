@@ -13,3 +13,4 @@ const mix = require('laravel-mix');
 
 mix.js('resources/js/app.js', 'public/js')
     .copy('resources/landing', 'public/landing')
+    .copy('resources/js/charts.js', 'public/js')

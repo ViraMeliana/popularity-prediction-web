@@ -1,7 +1,7 @@
 @extends('layouts.landing')
 @section('content')
     <section class="banner-section style-two centred"
-             style="background-image: url({{asset('landing/images/banner/banner-2.jpg')}});">
+             style="background-image: url({{asset('landing/images/banner/news2.png')}});">
         <div class="auto-container">
             <div class="content-box">
                 <div class="text">
@@ -61,7 +61,7 @@
                 let resultTitle = $('#result-title');
 
                 $.ajax({
-                    url: "https://multi-layer-perceptrons.herokuapp.com/",
+                    url: "http://129.150.53.166:5000",
                     type: "post",
                     contentType: 'application/json',
                     data: JSON.stringify({

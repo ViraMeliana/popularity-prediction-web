@@ -1,7 +1,7 @@
-<div id="sidebar" class="c-sidebar c-sidebar-fixed c-sidebar-lg-show" style="background-color: #e9605c">
+<div id="sidebar" class="c-sidebar c-sidebar-fixed c-sidebar-lg-show" style="background-color: #B94965">
 
     <div class="c-sidebar-brand d-md-down-none">
-        <a class="c-sidebar-brand-full h4" href="#">
+        <a class="c-sidebar-brand-full h4" href="/">
             {{ trans('panel.site_title') }}
         </a>
     </div>
@@ -60,10 +60,20 @@
         @can('news_prediction_access')
             <li class="c-sidebar-nav-item">
                 <a href="{{ route("admin.news-predictions.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/news-predictions") || request()->is("admin/news-predictions/*") ? "c-active" : "" }}">
-                    <i class="fa-fw fas fa-cogs c-sidebar-nav-icon">
+                    <i class="fa-fw fas fa-bullseye c-sidebar-nav-icon">
 
                     </i>
                     {{ trans('cruds.newsPrediction.title') }}
+                </a>
+            </li>
+        @endcan
+        @can('setting_access')
+            <li class="c-sidebar-nav-item">
+                <a href="{{ route("admin.settings.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/settings") || request()->is("admin/settings/*") ? "c-active" : "" }}">
+                    <i class="fa-fw fas fa-cogs c-sidebar-nav-icon">
+
+                    </i>
+                    {{ trans('cruds.setting.title') }}
                 </a>
             </li>
         @endcan

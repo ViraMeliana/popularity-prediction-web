@@ -48,7 +48,7 @@
             <div class="auto-container">
                 <div class="outer-box">
                     <div class="logo-box">
-                        <figure class="logo"><a href="index.html"><img src="{{ asset('landing/images/logo-2.png') }}" alt=""></a></figure>
+                        <figure class="logo"><a href="/"><img src="{{ asset('landing/images/favicon.ico') }}" alt=""></a></figure>
                     </div>
                     <div class="menu-area">
                         <!--Mobile Navigation Toggler-->
@@ -74,7 +74,7 @@
             <div class="auto-container">
                 <div class="outer-box">
                     <div class="logo-box">
-                        <figure class="logo"><a href="index.html"><img src="{{ asset('landing/images/logo.png') }}" alt=""></a></figure>
+                        <figure class="logo"><a href="/"><img src="{{ asset('landing/images/favicon.ico') }}" alt=""></a></figure>
                     </div>
                     <div class="menu-area">
                         <nav class="main-menu clearfix">
@@ -82,7 +82,13 @@
                         </nav>
                     </div>
                     <div class="btn-box">
-                        <a href="browse-ads-details.html" class="theme-btn-one"><i class="icon-1"></i>Submit Ads</a>
+                        <div class="btn-box">
+                            @if(auth()->id() > 0)
+                                <a href="/admin" class="theme-btn-one"><i class="icon-1"></i>Dashboard</a>
+                            @else
+                                <a href="/login" class="theme-btn-one"><i class="icon-1"></i>Login</a>
+                            @endif
+                        </div>
                     </div>
                 </div>
             </div>
@@ -102,45 +108,15 @@
 
     <!-- main-footer -->
     <footer class="main-footer">
-        <div class="footer-top" style="background-image: url({{ asset('landing/images/background/footer-1.jpg') }});">
-            <div class="auto-container">
-                <div class="widget-section">
-                    <div class="row clearfix">
-                        <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
-                            <div class="footer-widget logo-widget">
-                                <figure class="footer-logo"><a href="index.html"><img src="{{ asset('landing/images/footer-logo.png') }}" alt=""></a></figure>
-                                <div class="text">
-                                    <p>Lorem ipsum dolor amet consetetur adi pisicing elit sed eiusm tempor in cididunt ut labore dolore magna aliqua enim ad minim venitam</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
-                            <div class="footer-widget links-widget ml-70">
-                                <div class="widget-title">
-                                    <h3>Services</h3>
-                                </div>
-                                <div class="widget-content">
-                                    <ul class="links-list clearfix">
-                                        <li><a href="index.html">About Us</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
         <div class="footer-bottom">
             <div class="auto-container">
                 <div class="footer-inner clearfix">
-                    <div class="copyright pull-left"><p><a href="index.html">News Prediction</a> &copy; 2022 All Right Reserved</p></div>
+                    <div class="copyright pull-left"><p><a href="/">News Prediction</a> &copy; 2022 All Right Reserved</p></div>
                 </div>
             </div>
         </div>
     </footer>
     <!-- main-footer end -->
-
-
 
     <!--Scroll to top-->
     <button class="scroll-top scroll-to-target" data-target="html">

@@ -30,6 +30,10 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     // News Prediction
     Route::delete('news-predictions/destroy', 'NewsPredictionController@massDestroy')->name('news-predictions.massDestroy');
     Route::resource('news-predictions', 'NewsPredictionController');
+
+    // Setting
+    Route::get('settings', 'SettingController@index')->name('settings.index');
+    Route::put('settings/{setting}', 'SettingController@update')->name('settings.update');
 });
 Route::group(['prefix' => 'profile', 'as' => 'profile.', 'namespace' => 'Auth', 'middleware' => ['auth']], function () {
     // Change password

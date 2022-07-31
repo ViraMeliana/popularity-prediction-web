@@ -85,4 +85,14 @@ return [
             'deleted_at_helper' => ' ',
         ],
     ],
+    'setting' => [
+        'title' => 'Setting',
+        'title_singular' => 'Setting',
+        'fields' => [
+            'id' => 'ID',
+            'id_helper' => ' ',
+            'preferred_methods' => 'Preferred Methods',
+            'preferred_methods_helper' => ' ',
+        ],
+    ],
 ];

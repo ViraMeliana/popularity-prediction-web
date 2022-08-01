@@ -94,8 +94,9 @@
                         'title': title
                     }),
                     success: function (response) {
-                        const obj = JSON.parse(response)
-                        console.log(obj)
+                        let serialize  = JSON.parse(response)
+                        let title_slice = serialize.description.title_clean.split(',')
+                        console.log(title_slice)
                     }
                 });
                 @endif

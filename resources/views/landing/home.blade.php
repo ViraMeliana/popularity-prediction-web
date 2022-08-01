@@ -59,9 +59,21 @@
             $('#btn-title').on('click', function () {
                 let title = $('#title').val();
                 let resultTitle = $('#result-title');
-
+                @if($settings->preferred_methods == 'manual-mlp')
                 $.ajax({
                     url: "http://129.150.53.166:5000",
+                    type: "post",
+                    contentType: 'application/json',
+                    data: JSON.stringify({
+                        'title': title
+                    }),
+                    success: function (response) {
+                        console.log(response.result)
+                    }
+                });
+                @elseif($settings->preferred_methods == 'lib-mlp')
+                $.ajax({
+                    url: "http://129.150.53.166:5000/mlp-lib",
                     type: "post",
                     contentType: 'application/json',
                     data: JSON.stringify({
@@ -71,6 +83,22 @@
                         console.log(response)
                     }
                 });
+                @elseif($settings->preferred_methods == 'random-forest')
+                $.ajax({
+                    url: "http://129.150.53.166:5000/rf-lib",
+                    type: "post",
+                    contentType: 'application/json',
+                    Accept: 'application/json',
+                    dataType: 'json',
+                    data: JSON.stringify({
+                        'title': title
+                    }),
+                    success: function (response) {
+                        const obj = JSON.parse(response)
+                        console.log(obj)
+                    }
+                });
+                @endif
             });
         });
     </script>

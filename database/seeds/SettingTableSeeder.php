@@ -10,7 +10,7 @@ class SettingTableSeeder extends Seeder
         $settings = [
             [
                 'id'                    => 1,
-                'preferred_methods'     => 'mlp-lib',
+                'preferred_methods'     => 'lib-mlp',
             ],
         ];
 

@@ -92,7 +92,7 @@
             $('#btn-title').on('click', function () {
                 $('.keyword-container').hide();
                 $('.result-container').hide();
-                
+
                 let title = $('#title').val();
                 let resultTitle = $('#result-title');
 
